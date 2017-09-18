@@ -1,5 +1,7 @@
 # babel-plugin-transform-can-jsx
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/canjs/babel-plugin-transform-can-jsx.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/canjs/babel-plugin-transform-can-jsx.svg?branch=master)](https://travis-ci.org/canjs/babel-plugin-transform-can-jsx)
 
 Turns JSX into CanJS-observable hyperscript function calls
