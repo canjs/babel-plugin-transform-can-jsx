@@ -1,0 +1,43 @@
+{
+  "name": "babel-plugin-transform-can-jsx",
+  "version": "0.0.0",
+  "description": "Turns JSX into CanJS-observable hyperscript function calls",
+  "homepage": "https://canjs.com/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/canjs/babel-plugin-transform-can-jsx.git"
+  },
+  "author": {
+    "name": "Bitovi",
+    "email": "contact@bitovi.com",
+    "url": "https://www.bitovi.com/"
+  },
+  "scripts": {
+    "preversion": "npm test && npm run build",
+    "version": "git commit -am \"Update version number\" && git checkout -b release && git add -f dist/",
+    "postpublish": "git push --tags && git checkout master && git branch -D release && git push",
+    "test": "npm run jshint && mocha test/index.js",
+    "jshint": "jshint ./*.js ./src/ --config",
+    "release:patch": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish",
+    "build": "node build.js",
+    "develop": "done-serve --static --develop --port 8080"
+  },
+  "main": "src/babel-plugin-transform-can-jsx",
+  "keywords": [
+    "canjs"
+  ],
+  "dependencies": {
+    "babel-helper-builder-react-jsx": "^6.26.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-template": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-helper-plugin-test-runner": "^6.24.1",
+    "babel-plugin-tester": "^4.0.0",
+    "jshint": "^2.9.1",
+    "mocha": "^3.5.3"
+  },
+  "license": "MIT"
+}
