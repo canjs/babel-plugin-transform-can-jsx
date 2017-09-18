@@ -21,8 +21,7 @@
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
-    "build": "node build.js",
-    "develop": "done-serve --static --develop --port 8080"
+    "build": "node build.js"
   },
   "main": "src/babel-plugin-transform-can-jsx",
   "keywords": [
