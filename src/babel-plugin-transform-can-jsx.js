@@ -91,6 +91,23 @@ module.exports = function(babel) {
         });
     };
 
+	/*
+	 * wrap children using JSX Expressions in arrow functions
+	 * `{ count }` becomes `{ () => count }`
+	 */
+	visitor.JSXExpressionContainer = function(path) {
+		if (path.listKey !== 'children') {
+			return;
+		}
+
+		var wrapped = t.arrowFunctionExpression(
+			[],
+			path.node.expression
+		);
+
+		path.node.expression = wrapped;
+	};
+
     /*
      * Disallow namespaced attributes not handled above
      */

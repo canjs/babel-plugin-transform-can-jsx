@@ -58,3 +58,25 @@ render: makeObservable(function({ count }) {
 ```
 
 so, to prove this is possible, transpile any functions using JSX and destructured arguments to be wrapped in a function call.
+
+## <div>{count}</div>
+
+Another alternative for making JSXExpressions like this to work is to wrap individual JSXExpressions with arrow functions (or regular function expressions). This way our hyperscript implementation can wrap them in observations before generating live.text.
+
+This code:
+
+```
+const render = function({ count }) {
+    return <div>{count}</div>;
+};
+```
+
+could be transpiled to
+
+```
+return canJsx.h(
+	"div",
+	null,
+	() => count
+);
+```
