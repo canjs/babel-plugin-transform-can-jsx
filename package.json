@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "babel-helper-plugin-test-runner": "^6.24.1",
-    "babel-plugin-tester": "^5.0.0",
+    "babel-plugin-tester": "^6.2.1",
     "jshint": "^2.9.1",
     "mocha": "^5.0.0"
   },
